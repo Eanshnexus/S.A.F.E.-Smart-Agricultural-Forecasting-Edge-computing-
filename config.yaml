@@ -1,0 +1,88 @@
+project:
+  name: SAFE
+  version: 1.0.0
+  seed: 42
+paths:
+  raw_image_root: C:/Users/gupta/Desktop/Embedded agrisense life
+  raw_csv: C:/Users/gupta/Desktop/Embedded agrisense life/dataset.csv
+  processed_dir: data/processed
+  models_dir: models
+  reports_dir: reports
+image:
+  classes:
+  - bacterial_spot
+  - early_blight
+  - healthy
+  - late_blight
+  input_size:
+  - 64
+  - 64
+  channels: 3
+  train_per_class: 300
+  val_per_class: 64
+  test_per_class: 64
+  augmentation:
+    rotation_range: 20
+    width_shift_range: 0.15
+    height_shift_range: 0.15
+    horizontal_flip: true
+    zoom_range: 0.15
+    brightness_range:
+    - 0.8
+    - 1.2
+env:
+  csv_encoding: latin-1
+  feature_columns:
+  - NPK Level
+  - Temperature
+  - Humidity
+  - Ph Value
+  sequence_length: 30
+  stride: 1
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+image_model:
+  base_model: MobileNetV2
+  pretrained_weights: imagenet
+  freeze_base: true
+  global_pooling: avg
+  head:
+    dense_units: 256
+    dropout: 0.4
+    num_classes: 4
+    activation: softmax
+  training:
+    batch_size: 32
+    epochs: 30
+    learning_rate: 0.001
+    early_stopping_patience: 8
+    reduce_lr_patience: 4
+    reduce_lr_factor: 0.3
+lstm_model:
+  units:
+  - 64
+  - 32
+  dropout: 0.3
+  recurrent_dropout: 0.2
+  dense_units: 64
+  num_classes: 2
+  output_activation: sigmoid
+  training:
+    batch_size: 128
+    epochs: 40
+    learning_rate: 0.001
+    early_stopping_patience: 8
+    reduce_lr_patience: 4
+fusion_model:
+  dense_units:
+  - 128
+  - 64
+  dropout: 0.3
+  num_classes: 4
+  output_activation: softmax
+  training:
+    batch_size: 32
+    epochs: 30
+    learning_rate: 0.0005
+    early_stopping_patience: 10

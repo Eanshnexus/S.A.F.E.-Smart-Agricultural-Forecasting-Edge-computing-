@@ -1,0 +1,19 @@
+{
+  "evaluation_note": "64 images per class used for balanced evaluation. Fusion model uses synthetic pairing between PlantVillage images and dataset.csv sequences. These are INDEPENDENT datasets.",
+  "models": [
+    {
+      "model": "MobileNetV2 (Image Only)",
+      "accuracy": 0.668,
+      "macro_f1": 0.6603,
+      "macro_precision": 0.7699,
+      "macro_recall": 0.668
+    },
+    {
+      "model": "MobileNetV2 + LSTM Fusion",
+      "accuracy": 0.8398,
+      "macro_f1": 0.8413,
+      "macro_precision": 0.8445,
+      "macro_recall": 0.8398
+    }
+  ]
+}

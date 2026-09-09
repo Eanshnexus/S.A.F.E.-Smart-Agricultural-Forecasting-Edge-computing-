@@ -1,0 +1,20 @@
+{
+  "Train": {
+    "bacterial_spot": 300,
+    "early_blight": 300,
+    "healthy": 300,
+    "late_blight": 300
+  },
+  "Validate": {
+    "bacterial_spot": 64,
+    "early_blight": 64,
+    "healthy": 64,
+    "late_blight": 64
+  },
+  "Test": {
+    "bacterial_spot": 64,
+    "early_blight": 300,
+    "healthy": 64,
+    "late_blight": 64
+  }
+}

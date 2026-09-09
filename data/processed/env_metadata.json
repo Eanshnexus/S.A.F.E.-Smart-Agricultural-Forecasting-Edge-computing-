@@ -1,0 +1,51 @@
+{
+  "sequence_length": 30,
+  "stride": 1,
+  "feature_columns": [
+    "NPK Level",
+    "Temperature",
+    "Humidity",
+    "Ph Value"
+  ],
+  "n_features": 4,
+  "scaler_mean": [
+    2.0088531187122736,
+    33.84507042253521,
+    53.74527162977867,
+    70.29014084507043
+  ],
+  "scaler_std": [
+    0.8152977092347511,
+    8.99213499653144,
+    9.505812199390457,
+    10.095515837261814
+  ],
+  "splits": {
+    "train": {
+      "X": [
+        2455,
+        30,
+        4
+      ],
+      "n_positive": 1238
+    },
+    "val": {
+      "X": [
+        502,
+        30,
+        4
+      ],
+      "n_positive": 256
+    },
+    "test": {
+      "X": [
+        504,
+        30,
+        4
+      ],
+      "n_positive": 263
+    }
+  },
+  "soil_moisture_note": "ABSENT from dataset.csv. The LSTM uses 4 real features: NPK Level, Temperature, Humidity, Ph Value. Soil moisture is NOT included and NOT synthetically generated.",
+  "pairing_note": "Temporal split is chronological. No shuffling applied before splitting to respect time-series causality."
+}

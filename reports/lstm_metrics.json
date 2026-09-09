@@ -1,0 +1,26 @@
+{
+  "model": "LSTM_Temporal",
+  "features": [
+    "NPK Level",
+    "Temperature",
+    "Humidity",
+    "Ph Value"
+  ],
+  "soil_moisture": "NOT PRESENT in dataset.csv \u2014 not included",
+  "sequence_length": 30,
+  "test_accuracy": 0.5238,
+  "precision": 0.5406,
+  "recall": 0.5817,
+  "f1": 0.5604,
+  "roc_auc": 0.5443,
+  "confusion_matrix": [
+    [
+      111,
+      130
+    ],
+    [
+      110,
+      153
+    ]
+  ]
+}
