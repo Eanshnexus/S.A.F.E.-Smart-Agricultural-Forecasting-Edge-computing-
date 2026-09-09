@@ -169,3 +169,4 @@ result = predictor.predict(image_array, env_sequence, soil_moisture=42.5)
 
 Soil moisture is **not used by the current model** (absent from training data)
 but is logged in the output for future model versions once paired data is collected.
+# S.A.F.E.-Smart-Agricultural-Forecasting-Edge-computing-
